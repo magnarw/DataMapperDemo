@@ -17,14 +17,7 @@
         <PostalCode>{/*/*[@key='recipient_post_code']}</PostalCode>
         <Country>{/*/*[@key='recipient_country']}</Country>
         <RequestorName>{concat(/*/*[@key='requestor_firstName'], ' ', /*/*[@key='requestor_lasteName'])}</RequestorName>
-        <ShippmentCenter>{dm:if_then_else((/*/*[@key='recipient_country']) = ('united state'), 'US', 'EU')}</ShippmentCenter>
-        <tems>
-          <xsl:for-each select="/*/*[@key='products']/*">
-            <Item>
-              <ProductCode>{*[@key='productCode']}</ProductCode>
-            </Item>
-          </xsl:for-each>
-        </tems>
+        <ShippmentCenter>{dm:if_then_else((/*/*[@key='recipient_country']) = ('United States'), 'US', 'EU')}</ShippmentCenter>
       </Order>
     </SupplierOrderSubmission>
   </xsl:template>
