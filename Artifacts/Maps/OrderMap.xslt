@@ -18,6 +18,14 @@
         <Country>{/*/*[@key='recipient_country']}</Country>
         <RequestorName>{concat(/*/*[@key='requestor_firstName'], ' ', /*/*[@key='requestor_lasteName'])}</RequestorName>
         <ShippmentCenter>{dm:if_then_else((/*/*[@key='recipient_country']) = ('United States'), 'US', 'EU')}</ShippmentCenter>
+        <tems>
+          <xsl:for-each select="/*/*[@key='products']/*">
+            <Item>
+              <ProductCode>{*[@key='productCode']}</ProductCode>
+              <Qty>{*[@key='qty']}</Qty>
+            </Item>
+          </xsl:for-each>
+        </tems>
       </Order>
     </SupplierOrderSubmission>
   </xsl:template>

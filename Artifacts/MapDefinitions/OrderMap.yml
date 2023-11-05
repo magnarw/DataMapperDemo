@@ -23,4 +23,5 @@ SupplierOrderSubmission:
     tems:
       $for(/root/products/*):
         Item:
-          ItemID: $a
+          ProductCode: productCode
+          Qty: qty
