@@ -1,31 +1,81 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-        "requestor_lasteName": { "type": "string" },
-        "requestor_id": { "type": "string" },
-        "requestor_firstName": { "type": "string" },
-        "requestor_email": { "type": "string" },
-        "orderId": { "type": "string" },
-        "quantity_of_product_1": { "type": ["string", "null"] },
-        "recipient_address": { "type": ["string", "null"] },
-        "recipient_city": { "type": ["string", "null"] },
-        "recipient_company": { "type": ["string", "null"] },
-        "recipient_contact_person": { "type": ["string", "null"] },
-        "recipient_country": { "type": ["string", "null"] },
-        "recipient_email": { "type": ["string", "null"] },
-        "recipient_phone": { "type": ["string", "null"] },
-        "recipient_post_code": { "type": ["string", "null"] },
-        "products": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "productCode": { "type": ["string", "null"] },
-                    "qty": { "type": ["string", "null"] }
-                }
-            }
-        }
-    }
+      "requestor_lasteName": {
+        "type": "string"
+      },
+      "requestor_id": {
+        "type": "string"
+      },
+      "requestor_firstName": {
+        "type": "string"
+      },
+      "requestor_email": {
+        "type": "string"
+      },
+      "orderId": {
+        "type": "string"
+      },
+      "recipient_address": {
+        "type": "string"
+      },
+      "recipient_city": {
+        "type": "string"
+      },
+      "recipient_company": {
+        "type": "string"
+      },
+      "recipient_contact_person": {
+        "type": "string"
+      },
+      "recipient_country": {
+        "type": "string"
+      },
+      "recipient_email": {
+        "type": "string"
+      },
+      "recipient_phone": {
+        "type": "string"
+      },
+      "recipient_post_code": {
+        "type": "string"
+      },
+      "products": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "productCode": {
+                "type": "string"
+              },
+              "qty": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "productCode",
+              "qty"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "requestor_lasteName",
+      "requestor_id",
+      "requestor_firstName",
+      "requestor_email",
+      "orderId",
+      "recipient_address",
+      "recipient_city",
+      "recipient_company",
+      "recipient_contact_person",
+      "recipient_country",
+      "recipient_email",
+      "recipient_phone",
+      "recipient_post_code",
+      "products"
+    ]
   }
-  
